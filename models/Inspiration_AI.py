@@ -13,7 +13,7 @@ if not os.path.exists(SAVE_PATH):
 Inspiration_AI = Blueprint("Inspiration", __name__)
 
 
-def inspire_ai(image1, image2):
+def inspire_ai():
     pass
 
 
@@ -37,6 +37,6 @@ def Package_AI():
         mask.save(os.path.join(SAVE_PATH, mask_path))
 
         # 后续补充
-        ai_packsge(image1, image2)
+        inspire_ai()
 
-        return jsonify({"msg": "sucessful to finish download pics"}), 200
+        return jsonify({"status": 0, "date": {"mutiply_pic": "", "msg": f"inspiration_color is {color}"}}), 200

@@ -43,18 +43,9 @@ def Pattern_AI_text_change():
 
         text_func(description, rf, mask)
 
-        # url = "http://127.0.0.1:5000/api/pic_ai/text_change"
-        # files = {
-        #     "rf": os.path.join(SAVE_PATH, "rf" + rf_extension),
-        #     "mask": os.path.join(SAVE_PATH, "mask" + mask_extension),
-        # }
-        # data = {
-        #     "description": description
-        # }
-        # response = requests.post(url, files=files, data=data)
-        # # 输出响应
-        # print(response.status_code)
-        # print(response.json())
-
-        # 返回接收成功
-        return jsonify({"msg": "successful to finish download"}), 200
+        return (
+            jsonify(
+                {"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"description is {description}"}}
+            ),
+            200,
+        )

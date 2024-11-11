@@ -10,8 +10,8 @@ class Editting(Resource):
     def post(self):
         print(request.files)
         if "image" not in request.files:
-            return "No file part"
-        file = request.files["image"]
+            return jsonify({"status": 1, "data": {"msg": "error"}}), 400
+        image = request.files["image"]
 
-        edit_ai(file)
-        return {"code": 200, "msg": "editting image sucessful!"}
+        edit_ai(image)
+        return {"status": 0, "date": {"raw_pic": "", "new_pic": "", "msg": "eding_ai sucessful!"}}

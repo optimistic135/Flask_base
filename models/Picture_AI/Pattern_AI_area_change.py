@@ -42,18 +42,7 @@ def Pattern_AI_area_change():
 
         area_func(color, rf, mask)
 
-        # 测试代码
-        # url = "http://127.0.0.1:5000//api/pic_ai/area_change"
-        # files = {
-        #     "rf": os.path.join(SAVE_PATH, "rf" + rf_extension)
-        # }
-        # data = {
-        #     "description": description,
-        #     "color": color
-        # }
-        # response = requests.post(url, files=files, data=data)
-        # # 输出响应
-        # print(response.status_code)
-        # print(response.json())
-
-        return jsonify({"msg": "successful to finish download"}), 200
+        return (
+            jsonify({"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"area_color is {color}"}}),
+            200,
+        )

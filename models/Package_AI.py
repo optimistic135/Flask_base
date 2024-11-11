@@ -23,6 +23,7 @@ def Package_AI():
     if request.method == "POST":
         # 提示词描述
         description = request.form.get("description")
+        print(description)
 
         # 参考/蒙版/模型不存在时返回error
         if "reference" not in request.files or "mask" not in request.files or "model" not in request.files:
@@ -47,19 +48,4 @@ def Package_AI():
 
         Package_func(description, rf, mask, model)
 
-        # url = "http://127.0.0.1:5000//api/package_ai"
-        # files = {
-        #     "rf": os.path.join(SAVE_PATH, "rf" + rf_extension),
-        #     "mask": os.path.join(SAVE_PATH, "mask" + mask_extension),
-        #     "model": os.path.join(SAVE_PATH, "model" + model_extension)
-        # }
-        # data = {
-        #     "description": description
-        # }
-        # response = requests.post(url, files=files, data=data)
-        # # 输出响应
-        # print(response.status_code)
-        # print(response.json())
-
-        # 返回接收成功
-        return jsonify({"msg": "successful to finish download"}), 200
+        return {"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"{description}"}}

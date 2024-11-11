@@ -39,17 +39,7 @@ def Pattern_AI_color_change():
 
         color_func(color, rf)
 
-        # url = "http://127.0.0.1:5000/api/pic_ai/color_change"
-        # files = {
-        #     "rf": os.path.join(SAVE_PATH, "rf" + rf_extension)
-        # }
-        # data = {
-        #     "color": color
-        # }
-        # response = requests.post(url, files=files, data=data)
-        # # 输出响应
-        # print(response.status_code)
-        # print(response.json())
-
-        # 返回接收成功
-        return jsonify({"msg": "successful to finish download"}), 200
+        return (
+            jsonify({"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"pic_color is {color}"}}),
+            200,
+        )

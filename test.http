@@ -1,15 +1,140 @@
-GET http://127.0.0.1:5000
+###包装AI
+POST http://127.0.0.1:5000/api/package_ai HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+This is a description for the package AI.
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="reference"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="mask"; filename="2.png"
+Content-Type: image/png
+
+< ./test_image/2.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="model"; filename="3.png"
+Content-Type: image/png
+
+< ./test_image/3.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###图片AI/一键换色
+POST http://127.0.0.1:5000/api/pic_ai/color_change HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="color"
+
+blue
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="reference"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
 
 ###
-GET  http://127.0.0.1:5000/example/buleprint
+
+
+###图片AI/区域换色
+POST http://127.0.0.1:5000/api/pic_ai/area_change HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="color"
+
+red
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="reference"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="mask"; filename="2.png"
+Content-Type: image/png
+
+< ./test_image/2.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
-GET  http://127.0.0.1:5000/result_class
 
-###
-POST http://127.0.0.1:5000/result_class
-Content-Type: application/json
 
-{
-    "name" : "KK"
-}
+###图片AI/文本换色
+POST http://127.0.0.1:5000/api/pic_ai/text_change HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+text_ai
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="reference"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="mask"; filename="2.png"
+Content-Type: image/png
+
+< ./test_image/2.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###图片AI/参考换色
+POST http://127.0.0.1:5000/api/pic_ai/reference_change HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="reference"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="mask"; filename="2.png"
+Content-Type: image/png
+
+< ./test_image/2.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###灵感AI
+POST http://127.0.0.1:5000/api/inspire
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="color"
+
+black
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="mask"; filename="2.png"
+Content-Type: image/png
+
+< ./test_image/2.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###编辑AI
+POST http://127.0.0.1:5000/api/edit_ai HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+< ./test_image/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

@@ -22,9 +22,6 @@ def index():
     return jsonify({"msg": "welcome to flask_base"}), 200
 
 
-# app.register_blueprint(bule, url_prefix='/example')
-# api.add_resource(result_class, '/result_class')
-
 api.add_resource(Editting, "/api/edit_ai")
 app.register_blueprint(Inspiration_AI)
 
