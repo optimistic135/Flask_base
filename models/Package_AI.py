@@ -48,4 +48,12 @@ def Package_AI():
 
         Package_func(description, rf, mask, model)
 
-        return {"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"{description}"}}
+        return {
+            "status": 0,
+            "date": {
+                "mutiply_pic": "",
+                "gen_model": "",
+                "color_setting": {"material": "", "col_pic": ""},
+                "msg": f"{description}",
+            },
+        }

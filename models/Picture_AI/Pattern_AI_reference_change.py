@@ -42,6 +42,16 @@ def Pattern_AI_reference_change():
         reference_func(rf, mask)
 
         return (
-            jsonify({"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": "reference_ai is sucessful!"}}),
+            jsonify(
+                {
+                    "status": 0,
+                    "date": {
+                        "mutiply_pic": "",
+                        "gen_model": "",
+                        "color_setting": {"material": "", "col_pic": ""},
+                        "msg": "reference_ai is sucessful!",
+                    },
+                }
+            ),
             200,
         )

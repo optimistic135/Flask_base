@@ -43,6 +43,16 @@ def Pattern_AI_area_change():
         area_func(color, rf, mask)
 
         return (
-            jsonify({"status": 0, "date": {"mutiply_pic": "", "gen_model": "", "msg": f"area_color is {color}"}}),
+            jsonify(
+                {
+                    "status": 0,
+                    "date": {
+                        "mutiply_pic": "",
+                        "gen_model": "",
+                        "color_setting": {"material": "", "col_pic": ""},
+                        "msg": f"area_color is {color}",
+                    },
+                }
+            ),
             200,
         )

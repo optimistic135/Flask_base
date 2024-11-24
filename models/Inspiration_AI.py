@@ -39,4 +39,19 @@ def Package_AI():
         # 后续补充
         inspire_ai()
 
-        return jsonify({"status": 0, "date": {"mutiply_pic": "", "msg": f"inspiration_color is {color}"}}), 200
+        return (
+            jsonify(
+                {
+                    "status": 0,
+                    "date": {
+                        "mutiply_pic": a.jpg,
+                        "color_setting": {
+                            "material": "",
+                            "col_pic": "",
+                        },
+                        "msg": "",
+                    },
+                }
+            ),
+            200,
+        )
