@@ -44,7 +44,7 @@ def Package_AI():
                 {
                     "status": 0,
                     "date": {
-                        "mutiply_pic": a.jpg,
+                        "mutiply_pic": "a.jpg",
                         "color_setting": {
                             "material": "",
                             "col_pic": "",
